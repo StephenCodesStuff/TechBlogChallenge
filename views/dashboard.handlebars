@@ -1,0 +1,40 @@
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            {{#each posts as |post| }}
+            <div class="card w-75 mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <p class="card-text">{{post.body}}</p>
+                    <p class="card-text">Posted on {{post.date_created}}</p>
+                    <a href="#" class="btn btn-primary">Edit</a>
+                </div>
+            </div>
+
+            {{/each}}
+        </div>
+        <div class="col">
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Title</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Title Here">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <a href="#" class="btn btn-primary">submit</a>
+                </div>
+            </div>
+
+
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <p class="card-text">{{email}}</p>
+                    <a href="#" class="btn btn-primary">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
