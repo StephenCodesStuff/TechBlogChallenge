@@ -7,24 +7,30 @@
                     <h5 class="card-title">{{post.title}}</h5>
                     <p class="card-text">{{post.body}}</p>
                     <p class="card-text">Posted on {{post.date_created}}</p>
-                    <a href="#" class="btn btn-primary">Edit</a>
+                    <button class="btn btn-primary" id="blog-list" data-id="{{post.id}}">Delete</a>
                 </div>
             </div>
 
             {{/each}}
         </div>
         <div class="col">
-            <div class="card" style="width: 20rem;">
-                <div class="card-body">
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Title</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Title Here">
-                    </div>
-                    <div class="mb-3">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                    <a href="#" class="btn btn-primary">submit</a>
-                </div>
+             <div class="col-md-6">
+    <h3>Create a New Blog Post:</h3>
+
+    <form class="form new-blog-form">
+      <div class="form-group">
+        <label for="blog-title">Blog Title:</label>
+        <input class="form-input" type="text" id="blog-title" name="blog-title" />
+      </div>
+      <div class="form-group">
+        <label for="blog-text"></label>
+        <textarea class="form-input" id="blog-text" name="blog-text"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
             </div>
 
 
@@ -38,3 +44,4 @@
         </div>
     </div>
 </div>
+<script src="/js/dashboard.js"></script>
