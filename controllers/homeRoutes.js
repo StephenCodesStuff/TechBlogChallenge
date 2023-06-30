@@ -11,11 +11,15 @@ router.get('/', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+          // {
+          //   model: Comment,
+          //   as: "comments",
+          //   attributes: ["id", "body", "date_created", "user_id"],
+          // },
       ],
     });
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
     console.log(blogs)
-    // Pass serialized data and session flag into template
     res.render('homepage', { 
       blogs,
       logged_in: req.session.logged_in 
@@ -27,7 +31,6 @@ router.get('/', async (req, res) => {
   
   router.get('/dashboard', withAuth, async (req, res) => {
     try {
-      // Find the logged in user based on the session ID
       const userData = await User.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
         include: [{ model: Post }],
