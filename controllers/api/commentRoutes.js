@@ -24,7 +24,7 @@ router.get("/", (req, res) => {
 
 router.post('/:postId/', withAuth, async (req, res) => {
   try {
-    // Find the post by ID
+    
     const post = await Post.findByPk(req.params.postId);
     console.log(post)
 
@@ -32,14 +32,14 @@ router.post('/:postId/', withAuth, async (req, res) => {
       return res.status(404).json({ error: 'Post not found' });
     }
 
-    // Create a new comment
+   
     const comment = await Comment.create({
       comment_text: req.body.comment_text,
       user_id: req.session.user_id,
       post_id: req.body.post_id,
     });
 
-    // Associate the comment with the post
+  
     await comment.setPost(post);
 
     res.status(201).json(comment);
