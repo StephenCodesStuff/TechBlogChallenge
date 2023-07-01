@@ -1,0 +1,24 @@
+<div class="card w-75 mb-3">
+    <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">{{body}}</p>
+        <p class="card-text">Posted by {{user.name}} on {{date_created}}</p>
+        <p>Comments</p>
+        {{#each comments as |comment|}}
+        {{> commentPar comment}}
+        {{/each}}
+        
+        <div class="padding-20">
+            <form id="comment-form " class="padding-20">
+                <label for="comment-text">Leave A Comment</label>
+                <input class="padding-20" type="textarea" name="comment-text" id="comment-text">
+                <button class="padding-20" id="post-comment-btn">Post!</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+</div>

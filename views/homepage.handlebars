@@ -1,11 +1,3 @@
 {{#each blogs as |blog| }}
-    <div class="card w-75 mb-3">
-  <div class="card-body">
-    <h5 class="card-title">{{blog.title}}</h5>
-    <p class="card-text">{{blog.body}}</p>
-    <p class="card-text">Posted by {{blog.user.name}} on {{blog.date_created}}</p>
-    <a href="#" class="btn btn-primary">Comment</a>
-  </div>
-</div>
-    
+{{> postPar blog}}
 {{/each}}
