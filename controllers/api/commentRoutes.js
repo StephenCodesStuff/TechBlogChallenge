@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
         attributes: ["name"],
       },
     ],
-  }) //include the posts and comments of this user
+  }) 
     .then((commentData) => {
       res.json(commentData);
     })
